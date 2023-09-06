@@ -1,5 +1,18 @@
 // Sorting operations on arrays
+// We used bubble sort
+
 #include <stdio.h>
+
+// Creating a function that helps us print out our array 
+void display(int arr[], int len_array)
+{
+    printf("[");
+    for (int i = 0;i < len_array;i ++)
+    {
+        printf("%i,",arr[i]);
+    }
+    printf("]\n");
+}
 
 int main()
 {
@@ -7,6 +20,10 @@ int main()
     int numbers[7] = {13,7,2,8,4,0,3};
     int len_array = 7;
     int i = 0;
+    printf("Array:");
+    display(numbers,len_array);
+    
+    
     
     // The first loop walks through each element of the list untill it gets to the last
     while (i < len_array)
@@ -29,10 +46,6 @@ int main()
         
     }
     // printing the array to see if its sorted successfully
-    printf("Sorted array: [");
-    for (int e = 0; e < len_array; e++)
-    {
-        printf("%i,",numbers[e]);
-    }
-    printf("]");
+    printf("Sorted array: ");
+    display(numbers,len_array);
 }

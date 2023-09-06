@@ -1,4 +1,5 @@
 // Searching operations on arrays
+// We used linear search
 #include <stdio.h>
 
 int main()

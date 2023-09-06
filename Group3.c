@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 // Creating a function that helps us print out our array 
-int display(int arr[], int upperbound)
+void display(int arr[], int upperbound)
 {
     printf("[");
     for (int i = 0;i <= upperbound;i ++)

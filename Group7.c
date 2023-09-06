@@ -25,12 +25,26 @@ int main()
     }
     
     // printing the elemnts of the array to see if the implementation was successful
+    printf("2D-array: [");
+    
     for (int i = 0;i < Rows;i ++)
     {
+        printf("[");
         for (int j = 0;j < Columns; j ++)
         {
-            printf("numbers[%d][%d]: %i\n",i,j,array[i][j]);
+            printf("%i,",array[i][j]);
         }
+        printf("],");
     }
+    printf("]");
+    // printf("2D-array: [");
+    // for (int i = 0;i < Rows;i ++)
+    // {
+    //     printf("[");
+    //     for (int j = 0;j < Columns; j ++)
+    //     {
+    //         printf("numbers[%d][%d]: %i\n",i,j,array[i][j]);
+    //     }
+    // }
 }
 

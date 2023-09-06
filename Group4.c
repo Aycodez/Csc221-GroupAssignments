@@ -47,9 +47,11 @@ int main()
         j ++;
     }
     // then we print out the merged array and see if it contains all the elements of both araays
+    printf("Merged array: [");
     for (int element = 0;element < len_merged_array;element ++)
     {
-        printf("%i\n",merged[element]);
+        printf("%i,",merged[element]);
     }
+    printf("]");
     
 }

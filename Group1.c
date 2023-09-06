@@ -12,14 +12,16 @@ int main(void)
   int counter = 0;
   // this loop does the iteration by going over the array one element at a time untill it gets to the last element in the array
   
+  printf("Array: [");
   while(counter < len_array)
   
   {
     int current_element = numbers[counter];
-    printf("%i\n", current_element); // This prints the current element so we know what element we at in the arrray
+    printf("%i,", current_element); // This prints the current element so we know what element we at in the arrray
     counter += 1; //moves the counter to the next element
  
   }
+  printf("]\n");
   
   // After the loop is done, it stops and prints Finished
   printf("Finished transversing the array\n");
