@@ -1,61 +1,56 @@
 // Creating a doubly linked list
-# include <stdio.h>
-# include <stdlib.h>
 
-// Creating a new data structure for the nodes 
+#include <stdio.h>
+#include <stdlib.h>
+
 struct Node
 {
-    int data;
     struct Node *prev;
+    int data;
     struct Node *next;
 };
 
 int main()
 {
-    // initializing the head of the link list and pointer to show where we are in the linked list
+    // Creating an empty list
     struct Node *head = NULL;
-    int num_nodes;
-    printf("Enter number of nodes you want to link: ");
-    scanf("%i",&num_nodes);
-    struct Node *cpt = NULL;
-    // using a for loop to link the nodes and insert element into them
-    for (int i = 0;i < num_nodes; i ++)
-    {
-        // Creating a new node
-        struct Node *newnode = malloc(sizeof(struct Node));
-        // getting  the user inputand inserting into the data part of the node
-        int element;
-        printf("Enter a number to enter into node %i: ",i + 1);
-        scanf("%i",&element);
-        newnode -> data  = element;
 
-        // if this is the first node it becomes the head and pointer is set to it
-        if (head == NULL)
-        {
-            head = newnode;
-            head ->prev = NULL;
-            head -> next = NULL;
-            cpt = head;
-        }
-        else
-        {
-            cpt -> next = newnode;
-            newnode ->prev = cpt;
-            newnode -> next = NULL;
-            cpt = newnode;
-        
-        }
-        
+    // Creating four Nodes and Allocating space in memory to each node
+    struct Node *first =  malloc(sizeof(struct Node));
+    struct Node *second = malloc(sizeof(struct Node));
+    struct Node *third = malloc(sizeof(struct Node));
+    
 
-    }
+     // Pointing the headprt(empty list) to the first node
+    head = first;
+
+    // Inserting numbers into the data part of the nodes
+    first ->data = 100;
+    second ->data = 200;
+    third ->data = 300;
+    
+
+    // Linking the nodes together to create a doubly linked list
+    
+    first -> prev = NULL;
+    first -> next = second;
+    
+    second -> prev = first;
+    second -> next = third;
+    
+    third -> prev = second;
+    third -> next = NULL;
+
     printf("Doubly linked list created successfully");
-    // Freeing up the space allocated to each nodes
-    struct Node *current = head;
-    while (current != NULL)
+    
+    // Freeing up the space allocoted to each node in the memory
+    struct Node *count = head;
+    while ( count != NULL)
     {
-        struct Node *temp = current ->next;
-        free(current);
-        current = temp;
+        struct Node *tmp = count->next;
+        free(count);
+        count = tmp;
     }
+
 
 }
